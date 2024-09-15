@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Electronics</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo1.png">
+</head>
+
+<body>
+<header class="header">
+    <div class="container mt-6" id="searchBar">
+        <div class="columns is-fullwidth">
+            <div class="column is-four-fifths">
+                <input id="input1" class="input is-normal" type="text" placeholder="Search products"/>
+            </div>
+            <div class="column">
+                <button id="create" class="button is-white is-fullwidth js-modal-trigger"
+                        data-target="modal-create-product">
+                    Create Task
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="background"></div>
+<section class="section" id="products">
+    <div class="container">
+        <div class="columns is-multiline" id="container1">
+        </div>
+        <div id="shopping">
+            <div class="column card-content">
+                <h2 class="title is-4">Important tasks</h2>
+                <div id="cart" class="cart">
+                    <!-- Dropped items will appear here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div id="modal-create-product" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Task creation</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Name:</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input id="name" class="input" type="text" placeholder="Name"/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Description:</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input id="description" class="input" type="text" placeholder="Description"/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Asigned to:</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input id="assignedTo" class="input" type="text" placeholder="Asigned to"/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Start date:</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input id="start" class="input" type="text" placeholder="Start date"/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">End date:</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                            <input id="end" class="input" type="text" placeholder="End date"/>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="field is-horizontal">
+                <div class="field-label is-normal">
+                    <label class="label">Priority:</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <p class="control">
+                        <div class="select">
+                            <select id="status">
+                                <option value="To Do">To Do</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Done">Done</option>
+                            </select>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                        <label class="label">Priority:</label>
+                    </div>
+                    <div class="field-body">
+                        <div class="field">
+                            <p class="control">
+                            <div class="select">
+                                <select id="priority">
+                                    <option value="Low">Low</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+        </section>
+        <footer class="modal-card-foot">
+            <div class="buttons">
+                <button id="save" class="button is-success">Save changes</button>
+                <button id="delete" class="button button is-white">Delete</button>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<div id="modal-js-example" class="modal">
+    <div class="modal-background"></div>
+    <div id="1" class="card column is-full-mobile is-one-quarter-desktop">
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <img id="modalImage" src="https://via.placeholder.com/150?text=Mechanical+Keyboard"
+                     alt="Placeholder image">
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-content">
+                    <p id="ModalTitle" class="title is-4">Mechanical Keyboard</p>
+                </div>
+            </div>
+            <div id="ModalDescription" class="content">
+                RGB backlit mechanical keyboard with Cherry MX switches. 89.99
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<section id="noProducts"
+         class="section is-flex-direction-column is-justify-content-center is-align-items-center is-fullheight hidden">
+    <h1 class="title">No se encontraron resultados.</h1>
+</section>
+
+<script src="mercado.js"></script>
+</body>
+
+</html>
